@@ -12,6 +12,11 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
+
+  @media (min-width: 1120px) {
+    display: grid;
+    grid-template-rows: 550px 1fr;
+  }
 `;
 
 export const Header = styled.div`
@@ -34,10 +39,32 @@ export const HeaderContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 1120px) {
+    &.container {
+      max-width: 1120px;
+    }
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "logo hero hero";
+  }
 `;
 
 export const LogoContainer = styled.div`
   margin-bottom: 3.2rem;
+
+  @media (min-width: 1120px) {
+    grid-area: logo;
+    align-self: center;
+    margin: 0;
+    text-align: start;
+
+    & img {
+      height: 100%;
+    }
+  }
 `;
 
 export const Logo = styled.img.attrs({
@@ -51,12 +78,21 @@ export const Title = styled.h1`
   font-size: 2.4rem;
   line-height: 4.6rem;
   margin-top: 0.8rem;
+
+  @media (min-width: 1120px) {
+    text-align: initial;
+    font-size: 3.6rem;
+  }
 `;
 
 export const Hero = styled.img.attrs({
   src: heroImg,
 })`
   width: 100%;
+  @media (min-width: 1120px) {
+    grid-area: hero;
+    justify-self: end;
+  }
 `;
 
 export const Footer = styled.div`
@@ -79,7 +115,8 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-export const Button = styled(ButtonLink)``;
+export const Button = styled(ButtonLink)`
+`;
 
 export const Totals = styled.span`
   display: flex;
