@@ -59,7 +59,9 @@ export const Hero = styled.img.attrs({
   width: 100%;
 `;
 
-export const Footer = styled.div``;
+export const Footer = styled.div`
+  padding: 3.2rem 0;
+`;
 
 export const Message = styled.p`
   & strong {
@@ -67,8 +69,27 @@ export const Message = styled.p`
   }
 `;
 
-export const ButtonsContainer = styled.div``;
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 3.2rem 0;
+
+  & a:first-child {
+    margin-right: 1.6rem;
+  }
+`;
 
 export const Button = styled(ButtonLink)``;
 
-export const Totals = styled.span``;
+export const Totals = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+  padding: 3.2rem 0;
+
+  & img {
+    margin-left: 0.8rem;
+  }
+`;
