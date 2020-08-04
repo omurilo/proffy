@@ -2,6 +2,8 @@ import styled from "styled-components";
 import logoImg from "../../assets/images/logo.svg";
 import heroImg from "../../assets/images/landing.svg";
 
+import { Button as ButtonLink } from "../../components/ButtonLink";
+
 export const Container = styled.div``;
 
 export const Header = styled.div``;
@@ -30,6 +32,6 @@ export const Message = styled.p`
 
 export const ButtonsContainer = styled.div``;
 
-export const Button = styled.a``;
+export const Button = styled(ButtonLink)``;
 
 export const Totals = styled.span``;

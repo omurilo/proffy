@@ -37,7 +37,7 @@ const Landing: React.FC = () => {
           <strong>O que deseja fazer?</strong>
         </Message>
         <ButtonsContainer>
-          <Button>
+          <Button background="primary-lighter" hover="primary-light">
             <img src={studyIcon} alt="Estudar" />
             Estudar
           </Button>
