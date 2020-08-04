@@ -97,11 +97,30 @@ export const Hero = styled.img.attrs({
 
 export const Footer = styled.div`
   padding: 3.2rem 0;
+
+  @media (min-width: 1120px) {
+    &.container {
+      max-width: 1120px;
+    }
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas: "message totals buttons";
+
+    justify-self: center;
+    align-items: center;
+  }
 `;
 
 export const Message = styled.p`
   & strong {
     display: block;
+  }
+
+  @media (min-width: 1120px) {
+    grid-area: message;
+    justify-self: start;
   }
 `;
 
@@ -113,9 +132,17 @@ export const ButtonsContainer = styled.div`
   & a:first-child {
     margin-right: 1.6rem;
   }
+
+  @media (min-width: 1120px) {
+    grid-area: buttons;
+    justify-content: flex-end;
+  }
 `;
 
 export const Button = styled(ButtonLink)`
+  @media (min-width: 1120px) {
+    font-size: 2.4rem;
+  }
 `;
 
 export const Totals = styled.span`
@@ -128,5 +155,14 @@ export const Totals = styled.span`
 
   & img {
     margin-left: 0.8rem;
+  }
+
+  @media (min-width: 1120px) {
+    grid-area: totals;
+
+    display: block;
+    padding: 3.2rem;
+
+    font-size: 1.2rem;
   }
 `;
