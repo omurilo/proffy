@@ -12,7 +12,7 @@ type Props = {
 
 export const Button = styled(Link)<Props>`
   width: ${(props) => props.width ?? "30rem"};
-  height: ${(props) => props.width ?? "8.4rem"};
+  height: ${(props) => props.height ?? "8.4rem"};
   border-radius: 0.8rem;
   font: 700 2rem Archivo;
 

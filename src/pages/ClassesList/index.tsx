@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "../../components/Header";
 import Input from "../../components/Input";
+import { Button } from "../../components/ButtonLink";
 
 import proffysIcon from "../../assets/images/icons/smile.svg";
 
@@ -18,7 +19,18 @@ const ClassesList: React.FC = () => {
         <SearchForm>
           <Input name="subject" label="Matéria" />
           <Input name="week_day" label="Dia da semana" />
-          <Input name="time" label="Horário" />
+          <Input name="time" type="time" label="Horário" />
+          <Button
+            to=""
+            width="100%"
+            height="5.6rem"
+            style={{ alignSelf: "flex-end" }}
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+          >
+            Filtrar
+          </Button>
         </SearchForm>
       </Header>
     </Container>

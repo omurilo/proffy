@@ -18,6 +18,12 @@ export const Container = styled.div`
   &:nth-child(n+2) {
     margin-top: 1.4rem;
   }
+
+  @media (min-width: 700px) {
+    &:nth-child(n+2) {
+      margin-top: 0;
+    }
+  }
 `;
 
 export const Label = styled.label`
