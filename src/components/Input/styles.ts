@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type StyleProps = {
+  size?: { width?: string };
+};
+
+export const Container = styled.div<StyleProps>`
   font: 500 1.6rem Poppins;
   position: relative;
+  width: ${(props) => props?.size?.width ?? "100%"};
 
   &:focus-within::after {
-    content: '';
+    content: "";
     width: calc(100% - 3.2rem);
     height: 0.2rem;
     background-color: var(--color-primary);
@@ -15,13 +20,14 @@ export const Container = styled.div`
     bottom: 0;
   }
 
-  &:nth-child(n+2) {
+  & + & {
     margin-top: 1.4rem;
   }
 
   @media (min-width: 700px) {
-    &:nth-child(n+2) {
+    & + & {
       margin-top: 0;
+      width: 100%;
     }
   }
 `;

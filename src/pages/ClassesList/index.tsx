@@ -2,11 +2,11 @@ import React from "react";
 
 import Header from "../../components/Header";
 import Input from "../../components/Input";
-import { Button } from "../../components/ButtonLink";
+import Card from "../../components/Card";
 
 import proffysIcon from "../../assets/images/icons/smile.svg";
 
-import { Container, Proffys, SearchForm } from "./styles";
+import { Container, Proffys, SearchForm, Main, Button } from "./styles";
 
 const ClassesList: React.FC = () => {
   return (
@@ -17,9 +17,9 @@ const ClassesList: React.FC = () => {
           <span>Nós temos 34 professores</span>
         </Proffys>
         <SearchForm>
-          <Input name="subject" label="Matéria" />
-          <Input name="week_day" label="Dia da semana" />
-          <Input name="time" type="time" label="Horário" />
+          <Input name="subject" label="Matéria" dimension={{ width: '100%' }} />
+          <Input name="week_day" label="Dia da semana" dimension={{ width: 'calc(50% - 1.4rem)' }} />
+          <Input name="time" type="time" label="Horário" dimension={{ width: 'calc(50% - 1.4rem)' }} />
           <Button
             to=""
             width="100%"
@@ -33,6 +33,11 @@ const ClassesList: React.FC = () => {
           </Button>
         </SearchForm>
       </Header>
+      <Main>
+        <Card />
+        <Card />
+        <Card />
+      </Main>
     </Container>
   );
 };

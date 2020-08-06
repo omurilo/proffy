@@ -8,16 +8,17 @@ type Props = {
   background?: string;
   hover?: string;
   to: string;
+  size?: string;
 };
 
 export const Button = styled(Link)<Props>`
   width: ${(props) => props.width ?? "30rem"};
   height: ${(props) => props.height ?? "8.4rem"};
   border-radius: 0.8rem;
-  font: 700 2rem Archivo;
+  font: 700 ${props => props.size ?? "2rem"} Archivo;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   text-decoration: none;
