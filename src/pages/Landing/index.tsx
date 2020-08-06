@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import heartIcon from "../../assets/images/icons/purple-heart.svg";
 import studyIcon from "../../assets/images/icons/study.svg";
@@ -18,8 +18,16 @@ import {
   Button,
   Totals,
 } from "./styles";
+import api from "../../services/api";
 
 const Landing: React.FC = () => {
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    api.get('subscriptions').then(response => {
+      setTotal(response.data.total); 
+    })
+  }, [])
   return (
     <Container>
       <Header>
@@ -47,7 +55,7 @@ const Landing: React.FC = () => {
           </Button>
         </ButtonsContainer>
         <Totals>
-          Total de 285 conexões já realizadas{" "}
+          Total de {total} conexões já realizadas{" "}
           <img src={heartIcon} alt="Coração roxo" />
         </Totals>
       </Footer>
