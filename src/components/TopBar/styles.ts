@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.nav`
   width: 100%;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  height: 8rem;
-  padding: 0 2.8rem;
+  padding: 1.6rem;
   background-color: var(--color-primary-dark);
   border-bottom: 0.2rem solid var(--color-primary-darker);
 `;
@@ -21,5 +21,5 @@ export const Title = styled.span`
 `;
 
 export const Logo = styled.img`
-  width: 4.8rem;
+  height: 1.6rem;
 `;
