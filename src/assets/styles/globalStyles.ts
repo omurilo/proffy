@@ -10,10 +10,11 @@ const MyGlobalStyle = createGlobalStyle`
   --color-primary: #8257e5;
   --color-primary-dark: #774dd6;
   --color-primary-darker: #6842c2;
-  --color-secundary: #04d361;
-  --color-secundary-dark: #04bf58;
+  --color-secondary: #04d361;
+  --color-secondary-dark: #04bf58;
   --color-title-in-primary: #ffffff;
   --color-text-in-primary: #d4c2ff;
+  --color-text-in-primary-complement: #A380F6;
   --color-text-title: #32264d;
   --color-text-complement: #9c98a6;
   --color-text-base: #6a6180;

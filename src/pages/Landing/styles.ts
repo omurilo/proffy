@@ -142,6 +142,7 @@ export const ButtonsContainer = styled.div`
 export const Button = styled(ButtonLink)`
   @media (min-width: 1120px) {
     font-size: 2.4rem;
+    height: 10.4rem;
   }
 `;
 

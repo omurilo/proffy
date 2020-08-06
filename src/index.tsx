@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import GlobalStyles from "./assets/styles/globalStyles";
-import Landing from "./pages/Landing";
+import Routes from "./routes";
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <Landing />
+    <Routes />
   </React.StrictMode>,
   document.getElementById("root")
 );

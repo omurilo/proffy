@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 type Props = {
   width?: string;
@@ -6,11 +7,12 @@ type Props = {
   height?: string;
   background?: string;
   hover?: string;
+  to: string;
 };
 
-export const Button = styled.a<Props>`
+export const Button = styled(Link)<Props>`
   width: ${(props) => props.width ?? "30rem"};
-  height: ${(props) => props.width ?? "10.4rem"};
+  height: ${(props) => props.width ?? "8.4rem"};
   border-radius: 0.8rem;
   font: 700 2rem Archivo;
 
@@ -24,7 +26,7 @@ export const Button = styled.a<Props>`
   background-color: ${(props) =>
     props.background
       ? `var(--color-${props.background})`
-      : "var(--color-secundary)"};
+      : "var(--color-secondary)"};
   cursor: pointer;
   transition: 0.2s;
 
@@ -32,7 +34,7 @@ export const Button = styled.a<Props>`
     background-color: ${(props) =>
       props.hover
         ? `var(--color-${props.hover})`
-        : "var(--color-secundary-dark)"};
+        : "var(--color-secondary-dark)"};
   }
 
 
