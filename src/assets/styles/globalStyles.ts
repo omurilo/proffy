@@ -15,9 +15,11 @@ const MyGlobalStyle = createGlobalStyle`
   --color-title-in-primary: #ffffff;
   --color-text-in-primary: #d4c2ff;
   --color-text-in-primary-complement: #A380F6;
+  --color-text-placeholder: #c1bccc;
   --color-text-title: #32264d;
   --color-text-complement: #9c98a6;
   --color-text-base: #6a6180;
+  --color-hover-back: #ebebf5;
   --color-line-in-white: #e6e6f0;
   --color-input-background: #f8f8fc;
   --color-button-text: #ffffff;

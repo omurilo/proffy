@@ -25,6 +25,7 @@ export const Container = styled.div<StyleProps>`
   }
 
   @media (min-width: 700px) {
+    width: 100%;
     & + & {
       margin-top: 0;
       width: 100%;
@@ -44,8 +45,12 @@ export const Input = styled.input`
   border-radius: 0.8rem;
   background-color: var(--color-input-background);
   color: var(--color-text-base);
-  border: 1px solid var(--color-line-in-white);
+  border: 1px solid transparent;
   outline: 0;
   padding: 0 1.6rem;
   font: 1.6rem Archivo;
+
+  &:hover {
+    border: 1px solid var(--color-line-in-white);
+  }
 `;
