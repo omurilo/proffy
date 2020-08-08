@@ -26,10 +26,6 @@ export const Proffys = styled.div`
   }
 
   @media (min-width: 700px) {
-    & span {
-      font-size: 1.4rem;
-    }
-
     & img {
       height: 3.2rem;
     }
@@ -41,6 +37,7 @@ export const SearchForm = styled.form`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 3.2rem;
+  width: 100%;
 
   @media (min-width: 700px) {
     display: grid;

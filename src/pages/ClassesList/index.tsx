@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "../../components/Header";
 import Input from "../../components/Input";
+import Select from "../../components/Select";
 import Card from "../../components/Card";
 
 import proffysIcon from "../../assets/images/icons/smile.svg";
@@ -22,17 +23,42 @@ const ClassesList: React.FC = () => {
         }
       >
         <Styled.SearchForm>
-          <Input name="subject" label="Matéria" dimension={{ width: "100%" }} />
-          <Input
+          <Select
+            name="subject"
+            label="Matéria"
+            placeholder="Selecione"
+            options={[
+              { value: "Artes", label: "Artes" },
+              { value: "Biologia", label: "Biologia" },
+              { value: "Ciências", label: "Ciências" },
+              { value: "Educação Física", label: "Educação Física" },
+              { value: "Física", label: "Física" },
+              { value: "Geografia", label: "Geografia" },
+              { value: "História", label: "História" },
+              { value: "Matemática", label: "Matemática" },
+              { value: "Português", label: "Português" },
+              { value: "Química", label: "Química" },
+            ]}
+          />
+          <Select
             name="week_day"
             label="Dia da semana"
-            dimension={{ width: "calc(50% - 1.4rem)" }}
+            placeholder="Selecione"
+            dimension={{ width: "calc(50% - 0.4rem)" }}
+            options={[
+              { value: "1", label: "Segunda" },
+              { value: "2", label: "Terça" },
+              { value: "3", label: "Quarta" },
+              { value: "4", label: "Quinta" },
+              { value: "5", label: "Sexta" },
+            ]}
           />
           <Input
             name="time"
             type="time"
             label="Horário"
-            dimension={{ width: "calc(50% - 1.4rem)" }}
+            placeholder="Selecione"
+            dimension={{ width: "calc(50% - 0.4rem)" }}
           />
           <Styled.Button
             to=""

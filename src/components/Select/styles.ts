@@ -66,11 +66,13 @@ const Option = styled(components.Option)`
 `;
 
 export const Select = styled(SelectComponent).attrs({
+  noOptionsMessage: () => 'Nada encontrado',
   isSearchable: true,
   isClearable: true,
   components: { Control, Option },
   styles: {
-    placeholder: () => ({
+    placeholder: (base: any) => ({
+      ...base,
       color: "var(--color-text-placeholder)",
     }),
     control: (base: any, state: any) => ({
