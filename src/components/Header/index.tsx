@@ -1,23 +1,27 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import TopBar from "../../components/TopBar";
 
-import { Container, Content, Title } from "./styles";
+import * as Styled from "./styles";
 
 interface HeaderProps {
-  topTitle: string;
+  topBarTitle: string;
   title: string;
+  titleRight?: ReactNode;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
   return (
-    <Container>
-      <TopBar title={props.topTitle} />
-      <Content>
-        <Title>{props.title}</Title>
+    <Styled.Container>
+      <TopBar title={props.topBarTitle} />
+      <Styled.Content>
+        <Styled.TitleContainer>
+          <Styled.Title>{props.title}</Styled.Title>
+          {props.titleRight}
+        </Styled.TitleContainer>
         {props.children}
-      </Content>
-    </Container>
+      </Styled.Content>
+    </Styled.Container>
   );
 };
 

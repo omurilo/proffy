@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from "react";
 
-import { Container, Label, Input } from "./styles";
+import * as Styled from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -15,10 +15,10 @@ const InputComponent: React.FC<InputProps> = ({
   ...rest
 }) => {
   return (
-    <Container size={dimension}>
-      <Label htmlFor={name}>{label}</Label>
-      <Input type="text" name={name} {...rest} />
-    </Container>
+    <Styled.Container size={dimension}>
+      <Styled.Label htmlFor={name}>{label}</Styled.Label>
+      <Styled.Input type="text" name={name} {...rest} />
+    </Styled.Container>
   );
 };
 

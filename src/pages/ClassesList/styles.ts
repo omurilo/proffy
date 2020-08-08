@@ -15,17 +15,24 @@ export const Proffys = styled.div`
 
   & span {
     color: var(--color-text-in-primary);
-    font: 500 1.4rem Poppins;
+    font: 500 1.2rem Poppins;
     max-width: 18rem;
     flex-basis: 10rem;
   }
 
   & img {
     margin-right: 1.6rem;
+    height: 2.4rem;
   }
 
   @media (min-width: 700px) {
-    grid-area: adornment;
+    & span {
+      font-size: 1.4rem;
+    }
+
+    & img {
+      height: 3.2rem;
+    }
   }
 `;
 
@@ -36,13 +43,12 @@ export const SearchForm = styled.form`
   margin-top: 3.2rem;
 
   @media (min-width: 700px) {
-    grid-area: children;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 16px;
+    grid-template-columns: 1.5fr 1.1fr 0.7fr 0.7fr;
+    column-gap: 1.2rem;
 
     position: absolute;
-    bottom: -7.4rem;
+    bottom: -2.4rem;
   }
 `;
 

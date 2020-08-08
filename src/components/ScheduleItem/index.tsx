@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Container, Info, Label, Arrow, WeekDay, Time } from "./styles";
+import * as Styled from "./styles";
 
-import arrowIcon from '../../assets/images/icons/back.svg';
+import arrowIcon from "../../assets/images/icons/back.svg";
 
 interface ScheduleItemProps {
   disabled?: boolean;
@@ -10,17 +10,17 @@ interface ScheduleItemProps {
 
 const ScheduleItem: React.FC<ScheduleItemProps> = (props) => {
   return (
-    <Container disabled={props.disabled}>
-      <Info>
-        <Label>Dia</Label>
-        <WeekDay>Segunda</WeekDay>
-      </Info>
-      <Arrow src={arrowIcon} alt="icone de seta" />
-      <Info>
-        <Label>Horário</Label>
-        <Time>8h - 18h</Time>
-      </Info>
-    </Container>
+    <Styled.Container disabled={props.disabled}>
+      <Styled.Info>
+        <Styled.Label>Dia</Styled.Label>
+        <Styled.WeekDay>Segunda</Styled.WeekDay>
+      </Styled.Info>
+      <Styled.Arrow src={arrowIcon} alt="icone de seta" />
+      <Styled.Info>
+        <Styled.Label>Horário</Styled.Label>
+        <Styled.Time>8h - 18h</Styled.Time>
+      </Styled.Info>
+    </Styled.Container>
   );
 };
 

@@ -12,33 +12,32 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-  width: 90%;
+  width: 92.5%;
   position: relative;
-  margin: 3.2rem auto;
+  margin: 3.6rem auto;
 
   @media (min-width: 700px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "title title title adornment" "children children children children";
-    
-    flex: 1;
-
     max-width: 740px;
     margin: 0 auto;
     padding-top: 3.6rem;
     padding-bottom: 4.8rem;
-
+    height: 100%;
   }
 `;
 
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const Title = styled.h1`
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   line-height: 4.2rem;
   color: var(--color-title-in-primary);
+  max-width: 35rem;
 
   @media (min-width: 700px) {
-    grid-area: title;
-    max-width: 350px;
+    font-size: 3.6rem;
   }
 `;

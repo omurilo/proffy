@@ -2,55 +2,46 @@ import React from "react";
 
 import ScheduleItem from "../ScheduleItem";
 
-import {
-  Container,
-  Header,
-  Teacher,
-  Bio,
-  Schedules,
-  Footer,
-  Cost,
-  Whatsapp,
-} from "./styles";
+import * as Styled from "./styles";
 
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 
 const Card: React.FC = () => {
   return (
-    <Container>
-      <Header>
+    <Styled.Container>
+      <Styled.Header>
         <img
           src="https://avatars0.githubusercontent.com/u/1813234?s=460&u=e09cce60e5de03355ecfae710128048a6f37ab4e&v=4"
           alt="Proffy + name"
           className="avatar"
         />
-        <Teacher>
+        <Styled.Teacher>
           <strong className="proffy" style={{ display: "block" }}>
             Murilo Henrique
           </strong>
           <span className="class">Química</span>
-        </Teacher>
-      </Header>
-      <Bio>
+        </Styled.Teacher>
+      </Styled.Header>
+      <Styled.Bio>
         Apaixonado por Tecnologia e desenvolvimento web &lt;3.
         <br />
         <br />
         Amante do Javascript e no momento flertando com React.js, ReactNative e
         Node.js. Professor de Química quando sobre tempo (nunca sobra).
-      </Bio>
-      <Schedules>
+      </Styled.Bio>
+      <Styled.Schedules>
         <ScheduleItem />
-        <ScheduleItem disabled={true}  />
+        <ScheduleItem disabled={true} />
         <ScheduleItem />
         <ScheduleItem />
         <ScheduleItem disabled={true} />
-      </Schedules>
-      <Footer>
-        <Cost>
+      </Styled.Schedules>
+      <Styled.Footer>
+        <Styled.Cost>
           Preço/hora
           <strong>R$20,00</strong>
-        </Cost>
-        <Whatsapp
+        </Styled.Cost>
+        <Styled.Whatsapp
           to=""
           height="5.6rem"
           width="20rem"
@@ -62,9 +53,9 @@ const Card: React.FC = () => {
         >
           <img src={whatsappIcon} alt="botão whatsapp" />
           Entrar em contato
-        </Whatsapp>
-      </Footer>
-    </Container>
+        </Styled.Whatsapp>
+      </Styled.Footer>
+    </Styled.Container>
   );
 };
 
