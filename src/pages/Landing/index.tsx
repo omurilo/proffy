@@ -40,7 +40,7 @@ const Landing: React.FC = () => {
             <img src={studyIcon} alt="Estudar" />
             Estudar
           </Styled.Button>
-          <Styled.Button to="/give-class">
+          <Styled.Button to="/give-classes">
             <img src={giveClassesIcon} alt="Dar aulas" />
             Dar aulas
           </Styled.Button>
