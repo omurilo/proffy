@@ -4,21 +4,32 @@ import * as Styled from "./styles";
 
 import arrowIcon from "../../assets/images/icons/back.svg";
 
-interface ScheduleItemProps {
+export type ScheduleItemType = {
+  week_day: number | string;
+  from: number;
+  to: number;
   disabled?: boolean;
+};
+
+interface ScheduleItemProps {
+  schedule: ScheduleItemType;
 }
 
 const ScheduleItem: React.FC<ScheduleItemProps> = (props) => {
   return (
-    <Styled.Container disabled={props.disabled}>
+    <Styled.Container disabled={props.schedule.disabled}>
       <Styled.Info>
         <Styled.Label>Dia</Styled.Label>
-        <Styled.WeekDay>Segunda</Styled.WeekDay>
+        <Styled.WeekDay>{props.schedule.week_day}</Styled.WeekDay>
       </Styled.Info>
       <Styled.Arrow src={arrowIcon} alt="icone de seta" />
       <Styled.Info>
         <Styled.Label>Horário</Styled.Label>
-        <Styled.Time>8h - 18h</Styled.Time>
+        <Styled.Time>
+          {props.schedule.from
+            ? `${props.schedule.from / 60}h - ${props.schedule.to / 60}h`
+            : "-"}
+        </Styled.Time>
       </Styled.Info>
     </Styled.Container>
   );

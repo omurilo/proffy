@@ -64,7 +64,20 @@ export const Schedules = styled.div`
   }
 `;
 
-export const ScheduleItem = styled.div``;
+export const HeaderSchedules = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 1.6rem;
+  padding: 0 1.6rem;
+
+  font: 500 1.2rem Poppins;
+
+  @media (min-width: 720px) {
+    display: none;
+  }
+`;
 
 export const Footer = styled.footer`
   display: flex;

@@ -59,7 +59,7 @@ export const Button = styled(ButtonLink)`
 
 export const Main = styled.main`
   margin: 3.2rem auto;
-  width: 90%;
+  width: 92.5%;
 
   @media (min-width: 720px) {
     padding: 3.2rem 0;

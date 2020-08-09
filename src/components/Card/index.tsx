@@ -1,45 +1,104 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
-import ScheduleItem from "../ScheduleItem";
+import ScheduleItem, { ScheduleItemType } from "../ScheduleItem";
 
-import * as Styled from "./styles";
+import api from "../../services/api";
 
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 
-const Card: React.FC = () => {
+import * as Styled from "./styles";
+
+export type ClassItem = {
+  id: number;
+  user_id: number;
+  name: string;
+  avatar: string;
+  bio: string;
+  subject: string;
+  cost: number;
+  whatsapp: number;
+  schedules: ScheduleItemType[];
+};
+
+interface CardProps {
+  classItem: ClassItem;
+}
+
+const Card: React.FC<CardProps> = ({ classItem }) => {
+  const [schedules, setSchedules] = useState<ScheduleItemType[]>([]);
+  const days: { [key: number]: string } = useMemo(
+    () => ({
+      1: "Segunda",
+      2: "Terça",
+      3: "Quarta",
+      4: "Quinta",
+      5: "Sexta",
+    }),
+    []
+  );
+
+  useEffect(() => {
+    const arrayFilledOfDisabledSchedules: ScheduleItemType[] = [];
+    Array(5)
+      .fill(0)
+      .map((item, index) => {
+        const scheduleItem = classItem.schedules.find(
+          (schedule: ScheduleItemType) => schedule.week_day === index + 1
+        );
+        if (scheduleItem) {
+          arrayFilledOfDisabledSchedules[index] = {
+            ...scheduleItem,
+            week_day: days[scheduleItem.week_day as number],
+            disabled: false,
+          };
+          return item;
+        }
+
+        arrayFilledOfDisabledSchedules[index] = {
+          week_day: days[index + 1],
+          from: 0,
+          to: 0,
+          disabled: true,
+        };
+
+        return item;
+      });
+    setSchedules(arrayFilledOfDisabledSchedules);
+  }, []); //eslint-disable-line
+
+  const handleSetNewSubscription = (user_id: number) => {
+    api.post("subscriptions", {
+      user_id,
+    });
+  };
   return (
     <Styled.Container>
       <Styled.Header>
-        <img
-          src="https://avatars0.githubusercontent.com/u/1813234?s=460&u=e09cce60e5de03355ecfae710128048a6f37ab4e&v=4"
-          alt="Proffy + name"
-          className="avatar"
-        />
+        <img src={classItem.avatar} alt={`Proffy ${classItem.name}`} />
         <Styled.Teacher>
-          <strong className="proffy" style={{ display: "block" }}>
-            Murilo Henrique
-          </strong>
-          <span className="class">Química</span>
+          <strong className="proffy">{classItem.name}</strong>
+          <span className="class">{classItem.subject}</span>
         </Styled.Teacher>
       </Styled.Header>
-      <Styled.Bio>
-        Apaixonado por Tecnologia e desenvolvimento web &lt;3.
-        <br />
-        <br />
-        Amante do Javascript e no momento flertando com React.js, ReactNative e
-        Node.js. Professor de Química quando sobre tempo (nunca sobra).
-      </Styled.Bio>
+      <Styled.Bio>{classItem.bio}</Styled.Bio>
       <Styled.Schedules>
-        <ScheduleItem />
-        <ScheduleItem disabled={true} />
-        <ScheduleItem />
-        <ScheduleItem />
-        <ScheduleItem disabled={true} />
+        <Styled.HeaderSchedules>
+          <span>Dia</span>
+          <span>Horário</span>
+        </Styled.HeaderSchedules>
+        {schedules.map((schedule: ScheduleItemType) => (
+          <ScheduleItem key={schedule.week_day} schedule={schedule} />
+        ))}
       </Styled.Schedules>
       <Styled.Footer>
         <Styled.Cost>
           Preço/hora
-          <strong>R$20,00</strong>
+          <strong>
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(classItem.cost)}
+          </strong>
         </Styled.Cost>
         <Styled.Whatsapp
           to=""
@@ -48,7 +107,11 @@ const Card: React.FC = () => {
           size="1.4rem"
           onClick={(e) => {
             e.preventDefault();
-            window.open("https://wa.me/5562982082088?text=Olá", "_blank");
+            window.open(
+              `https://wa.me/${classItem.whatsapp}?text=Olá, gostaria de saber mais detalhes sobre a aula de ${classItem.subject} oferecida no Proffy.`,
+              "_blank"
+            );
+            handleSetNewSubscription(classItem.user_id);
           }}
         >
           <img src={whatsappIcon} alt="botão whatsapp" />
