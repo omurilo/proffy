@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 type StyleProps = {
   size?: { width?: string };
+  primary?: boolean;
+  marginTop?: string;
 };
 
 export const Container = styled.div<StyleProps>`
@@ -20,22 +22,28 @@ export const Container = styled.div<StyleProps>`
     bottom: 0;
   }
 
-  & + & {
-    margin-top: 1.4rem;
+  & + &,
+  &:nth-child(n + 3) {
+    margin-top: ${(props) => props?.marginTop ?? "1.4rem"};
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     width: 100%;
-    & + & {
-      margin-top: 0;
+
+    & + &,
+    &:nth-child(n + 3) {
+      margin-top: ${(props) => props?.marginTop ?? 0};
       width: 100%;
     }
   }
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<StyleProps>`
   font-size: 1.4rem;
-  color: var(--color-text-in-primary);
+  color: ${(props) =>
+    props.primary
+      ? "var(--color-text-in-primary)"
+      : "var(--color-text-complement)"};
 `;
 
 export const Input = styled.input`

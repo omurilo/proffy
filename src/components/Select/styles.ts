@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import SelectComponent, { components } from "react-select";
-import { Container as Input } from "../Input/styles";
 
 type StyleProps = {
   size?: { width?: string };
+  primary?: boolean;
+  marginTop?: string;
 };
 
 export const Container = styled.div<StyleProps>`
@@ -23,22 +24,25 @@ export const Container = styled.div<StyleProps>`
   }
 
   & + &,
-  & + ${Input} {
-    margin-top: 1.4rem;
+  &:nth-child(n + 3) {
+    margin-top: ${(props) => props?.marginTop ?? "1.4rem"};
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     & + &,
-    & + ${Input} {
-      margin-top: 0;
+    &:nth-child(n + 3) {
+      margin-top: ${(props) => props?.marginTop ?? 0};
       width: 100%;
     }
   }
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<StyleProps>`
   font-size: 1.4rem;
-  color: var(--color-text-in-primary);
+  color: ${(props) =>
+    props.primary
+      ? "var(--color-text-in-primary)"
+      : "var(--color-text-complement)"};
 `;
 
 const Control = styled(components.Control)`
@@ -57,7 +61,7 @@ const Option = styled(components.Option)`
   border-top: 1px solid var(--color-line-in-white);
   height: 5.6rem;
   padding: 0 2.4rem;
-  
+
   &:hover {
     border-left-color: var(--color-primary);
     background-color: var(--color-hover-back);
@@ -66,7 +70,7 @@ const Option = styled(components.Option)`
 `;
 
 export const Select = styled(SelectComponent).attrs({
-  noOptionsMessage: () => 'Nada encontrado',
+  noOptionsMessage: () => "Nada encontrado",
   isSearchable: true,
   isClearable: true,
   components: { Control, Option },
@@ -80,7 +84,7 @@ export const Select = styled(SelectComponent).attrs({
       backgroundColor: "var(--color-input-background)",
       boxShadow: "none",
       border: "1px solid transparent",
-      borderRadius: '0.8rem',
+      borderRadius: "0.8rem",
       borderBottomLeftRadius: state.menuIsOpen && 0,
       borderBottomRightRadius: state.menuIsOpen && 0,
       ":hover": {
@@ -89,10 +93,10 @@ export const Select = styled(SelectComponent).attrs({
     }),
     menu: (base: any) => ({
       ...base,
-      boxShadow: 'none',
+      boxShadow: "none",
       border: "none",
       borderTop: 0,
-      marginTop: '-0.2rem',
+      marginTop: "-0.2rem",
       borderRadius: 0,
       backgroundColor: "var(--color-input-background)",
     }),
