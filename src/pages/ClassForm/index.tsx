@@ -82,7 +82,7 @@ const ClassForm: React.FC = () => {
       schedules: scheduleItems,
     });
 
-    history.push("/");
+    history.push("/success-give-class");
   };
 
   return (
