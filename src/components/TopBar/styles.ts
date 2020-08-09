@@ -14,7 +14,7 @@ export const Content = styled.div`
   justify-content: space-between;
 
   padding: 1.6rem;
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     max-width: 1120px;
   }
 `;

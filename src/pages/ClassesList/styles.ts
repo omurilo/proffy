@@ -25,7 +25,7 @@ export const Proffys = styled.div`
     height: 2.4rem;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     & img {
       height: 3.2rem;
     }
@@ -39,7 +39,7 @@ export const SearchForm = styled.form`
   margin-top: 3.2rem;
   width: 100%;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     display: grid;
     grid-template-columns: 1.5fr 1.1fr 0.7fr 0.7fr;
     column-gap: 1.2rem;
@@ -52,7 +52,7 @@ export const SearchForm = styled.form`
 export const Button = styled(ButtonLink)`
   margin-top: 2.4rem;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     margin-top: 0;
   }
 `;
@@ -61,9 +61,17 @@ export const Main = styled.main`
   margin: 3.2rem auto;
   width: 90%;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     padding: 3.2rem 0;
     max-width: 740px;
     margin: 0 auto;
   }
+`;
+
+export const Fallback = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 25rem;
+  margin: 10rem auto;
+  text-align: center;
 `;

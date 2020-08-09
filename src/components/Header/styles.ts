@@ -6,7 +6,7 @@ export const Container = styled.header`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     height: 340px;
   }
 `;
@@ -16,7 +16,7 @@ export const Content = styled.div`
   position: relative;
   margin: 3.6rem auto;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     max-width: 740px;
     margin: 0 auto;
     padding-top: 3.6rem;
@@ -37,7 +37,7 @@ export const Title = styled.h1`
   color: var(--color-title-in-primary);
   max-width: 35rem;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     font-size: 3.6rem;
   }
 `;

@@ -21,7 +21,7 @@ export const Header = styled.header`
     border-radius: 50%;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     padding: 3.2rem;
   }
 `;
@@ -48,9 +48,9 @@ export const Bio = styled.p`
 export const Schedules = styled.div`
   padding-top: 3.2rem;
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     max-width: 90%;
@@ -75,7 +75,7 @@ export const Footer = styled.footer`
   border-top: 1px solid var(--color-line-in-white);
   background-color: var(--color-box-footer);
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     padding: 3.2rem;
   }
 `;
@@ -88,7 +88,7 @@ export const Cost = styled.p`
     line-height: 2.6rem;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 720px) {
     & strong {
       display: initial;
       margin-left: 1.4rem;

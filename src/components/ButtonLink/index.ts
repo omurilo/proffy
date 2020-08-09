@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 type Props = {
   width?: string;
@@ -15,7 +15,7 @@ export const Button = styled(Link)<Props>`
   width: ${(props) => props.width ?? "30rem"};
   height: ${(props) => props.height ?? "8.4rem"};
   border-radius: 0.8rem;
-  font: 700 ${props => props.size ?? "2rem"} Archivo;
+  font: 700 ${(props) => props.size ?? "2rem"} Archivo;
 
   display: flex;
   justify-content: space-evenly;
@@ -38,9 +38,14 @@ export const Button = styled(Link)<Props>`
         : "var(--color-secondary-dark)"};
   }
 
-
   & img {
-    margin-right: 1rem;
+    margin-right: 0.2rem;
     width: 4rem;
+  }
+
+  @media (min-width: 720px) {
+    & img {
+      margin-right: 1rem;
+    }
   }
 `;
